@@ -1,0 +1,7 @@
+# Базовый образ для самого JupyterHub
+FROM jupyterhub/jupyterhub:latest
+
+# Устанавливаем spawner для Docker и аутентификатор
+RUN pip install --no-cache-dir \
+    dockerspawner \
+    jupyterhub-nativeauthenticator

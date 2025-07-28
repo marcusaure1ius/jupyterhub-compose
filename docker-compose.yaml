@@ -1,0 +1,23 @@
+services:
+  jupyterhub:
+    build:
+      context: ./jupyterhub
+      dockerfile: Dockerfile.main
+    container_name: jupyterhub-service
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./jupyterhub/jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py
+      - /var/run/docker.sock:/var/run/docker.sock
+      - jupyterhub_data:/data
+    networks:
+      - jupyterhub-network
+
+volumes:
+  jupyterhub_data:
+    name: jupyterhub_data
+
+networks:
+  jupyterhub-network:
+    name: jupyterhub-network
