@@ -2,6 +2,16 @@
 
 cd "$(dirname "$0")"
 
+# Определяем, что доступно: docker compose или docker-compose
+if docker compose version >/dev/null 2>&1; then
+    DC="docker compose"
+elif docker-compose version >/dev/null 2>&1; then
+    DC="docker-compose"
+else
+    echo "Ошибка: docker compose не найден в системе"
+    exit 1
+fi
+
 echo "Шаг 1: Сборка пользовательского образа Docker..."
 docker build -t jupyter-user-image ./user-image
 
@@ -31,5 +41,5 @@ fi
 
 echo "Шаг 2: Запуск сервисов через docker-compose..."
 
-docker-compose down -v --remove-orphans
-docker-compose up -d --build
+$DC down -v --remove-orphans
+$DC up -d --build

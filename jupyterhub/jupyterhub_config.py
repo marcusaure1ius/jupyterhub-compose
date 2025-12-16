@@ -17,7 +17,7 @@ c.Spawner.default_url = '/lab'
 c.DockerSpawner.image = 'jupyter-user-image'
 c.DockerSpawner.network_name = 'jupyterhub-network'
 c.DockerSpawner.notebook_dir = '/home/jovyan/work'
-c.DockerSpawner.volumes = {'jupyterhub-user-{username}': '/home/jovyan/work'}
+c.DockerSpawner.volumes = {'jupyterhub-user-{username}': '/home/jovyan/work', '/home/administrator/engineering': '/home/jovyan/work/shared'}
 c.DockerSpawner.remove = True
 
 # Настройки аутентификатора (используется NativeAuthenticator)

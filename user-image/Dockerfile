@@ -25,6 +25,7 @@ RUN mamba install --yes \
     'cython' \
     'dask' \
     'dill' \
+    'oracledb' \
     'h5py' \
     'ipympl' \
     'ipywidgets' \
@@ -36,6 +37,8 @@ RUN mamba install --yes \
     'pandas' \
     'patsy' \
     'protobuf' \
+    'psycopg2-binary' \
+    'plotly' \
     'pytables' \
     'scikit-image' \
     'scikit-learn' \
