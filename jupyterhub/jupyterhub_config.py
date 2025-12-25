@@ -12,7 +12,6 @@ c.JupyterHub.authenticator_class = 'nativeauthenticator.NativeAuthenticator'
 c.JupyterHub.template_paths = [f"{os.path.dirname(nativeauthenticator.__file__)}/templates/"]
 
 # Настройка спаунера (используется DockerSpawner)
-c.Spawner.mem_limit = '2G'
 c.Spawner.default_url = '/lab'
 c.DockerSpawner.image = 'jupyter-user-image'
 c.DockerSpawner.network_name = 'jupyterhub-network'

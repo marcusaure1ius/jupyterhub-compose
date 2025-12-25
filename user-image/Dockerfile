@@ -20,6 +20,7 @@ RUN mamba install --yes \
     'altair' \
     'beautifulsoup4' \
     'bokeh' \
+    'boto3' \
     'bottleneck' \
     'cloudpickle' \
     'cython' \
